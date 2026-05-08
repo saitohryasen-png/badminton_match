@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>バドミントン対戦メーカー</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
   <script src="js/script.js" defer></script>
 </head>
+
 <body>
   <div class="app">
-  <h1><i class="ti ti-trophy" aria-hidden="true" style="font-size:20px; color: var(--color-text-secondary);"></i> バドミントン対戦メーカー</h1>
-  <p class="subtitle">出場均等 ＋ 同じペアにならないよう自動で調整します。</p>
+    <h1>
+      🏸バドミントン対戦メーカー
+    </h1>
+    <p class="subtitle">出場均等 ＋ 同じペアにならないよう自動で調整します。</p>
 
-  <div class="section-label">選手登録 <span id="player-count" style="font-weight:400;">(0 / 6)</span></div>
-  <div class="player-input-row">
-    <input type="text" id="name-input" placeholder="選手名を入力…" maxlength="12" />
-    <button onclick="addPlayer()" style="white-space:nowrap; padding: 0 16px;">
-      <i class="ti ti-plus" aria-hidden="true"></i> 追加
+    <div class="section-label">選手登録 <span id="player-count" style="font-weight:400;">(0/6)</span></div>
+    <div class="player-input-row">
+      <input type="text" id="name-input" placeholder="選手名を入力…" maxlength="12" style="border-radius: 4px;" />
+      <button onclick="addPlayer()" style="white-space:nowrap; padding: 0 16px; border-radius: 4px;">
+        <i class="ti ti-plus" aria-hidden="true"></i> 追加
+      </button>
+    </div>
+    <div id="player-list" class="player-list">
+      <div class="empty-state">選手を追加してください</div>
+    </div>
+
+    <button class="btn-primary" id="match-btn" onclick="generateMatch()" disabled>
+      <i class="ti ti-refresh" aria-hidden="true"></i> 対戦を抽選する
     </button>
-  </div>
-  <div id="player-list" class="player-list">
-    <div class="empty-state">選手を追加してください</div>
-  </div>
+    <button class="btn-ghost" onclick="resetAll()">
+      <i class="ti ti-rotate" aria-hidden="true"></i> 出場記録・ペア履歴をリセット
+    </button>
 
-  <button class="btn-primary" id="match-btn" onclick="generateMatch()" disabled>
-    <i class="ti ti-refresh" aria-hidden="true"></i> 対戦を抽選する
-  </button>
-  <button class="btn-ghost" onclick="resetAll()">
-    <i class="ti ti-rotate" aria-hidden="true"></i> 出場記録・ペア履歴をリセット
-  </button>
-
-  <div id="warn-area"></div>
-  <div id="result-area"></div>
+    <div id="warn-area"></div>
+    <div id="result-area"></div>
   </div>
 </body>
+
 </html>

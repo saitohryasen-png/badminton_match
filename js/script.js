@@ -113,7 +113,7 @@ function generateMatch() {
 }
 
 function render() {
-  playerCount.textContent = `(${players.length} / 6)`;
+  playerCount.textContent = `(${players.length}/6)`;
   matchBtn.disabled = players.length < 4;
 
   if (players.length === 0) {
