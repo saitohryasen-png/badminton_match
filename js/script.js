@@ -105,7 +105,7 @@ function generateMatch() {
   pairHistory[pairKey(teamB[0], teamB[1])] = (pairHistory[pairKey(teamB[0], teamB[1])] || 0) + 1;
 
   matchHistory.unshift({ teamA, teamB, bench, isNewPairA, isNewPairB, allUsed });
-  if (matchHistory.length > 5) matchHistory.pop();
+  if (matchHistory.length > 8) matchHistory.pop();
 
   warnArea.innerHTML = allUsed
     ? `<div class="warn-box"><i class="ti ti-alert-triangle" style="font-size:16px; flex-shrink:0; margin-top:1px;" aria-hidden="true"></i><span>全ての組み合わせが一度使われました。最もペアの重複が少ない組み合わせを選びました。</span></div>`

@@ -126,19 +126,27 @@ h1 { font-family: var(--font-heading); font-size: 28px; font-weight: 700; color:
   }
 
   .match-body {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    text-align: center;
+    display: grid;
+    /* 左右を均等に、真ん中（VS）を文字幅に固定 */
+    grid-template-columns: 1fr auto 1fr; 
+    align-items: center;
+    padding: 1.25rem 1rem;
+    gap: 12px;
+    width: 100%;       /* 画面幅いっぱいに使う */
+    box-sizing: border-box;
   }
 
   .team {
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0; /* これが重要！文字が長くても枠を突き破らないようにする */  
   }
 
-  .vs-badge {
+  /* .vs-badge {
     order: -1;
     margin: 0 auto;
-  }
+  } */
 
   .result-header {
     padding: 10px 12px;
