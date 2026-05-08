@@ -11,6 +11,9 @@ const resultArea = document.getElementById('result-area');
 const warnArea = document.getElementById('warn-area');
 
 nameInput.addEventListener('keydown', e => { if (e.key === 'Enter') addPlayer(); });
+nameInput.addEventListener('focus', () => {
+  setTimeout(() => nameInput.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
+});
 
 function pairKey(a, b) { return [a, b].sort().join('|'); }
 
@@ -28,6 +31,7 @@ function addPlayer() {
   stats[name] = { playCount: 0, restCount: 0 };
   nameInput.value = '';
   nameInput.focus();
+  setTimeout(() => nameInput.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
   render();
 }
 

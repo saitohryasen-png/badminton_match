@@ -22,10 +22,10 @@
 body {
   font-family: var(--font-sans);
   background: linear-gradient(135deg, #4CAF50, #2E7D32, #1B5E20, #0D47A1);
-  background-attachment: fixed;
+  background-attachment: scroll;
   min-height: 100vh;
   color: var(--color-text-primary);
-  overflow-x: hidden;
+  overflow: auto;
 }
 
 .app {
