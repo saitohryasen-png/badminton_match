@@ -140,7 +140,7 @@ function render() {
           ${s.restCount > 0 ? `<span class="stat-pill pill-rest">連続休み ${s.restCount}</span>` : ''}
         </div>
         <button class="remove-btn" onclick="removePlayer(${i})" aria-label="${p}を削除">
-          <i class="ti ti-x" style="font-size:16px;" aria-hidden="true"></i>
+          <span aria-hidden="true" style="font-size:18px; line-height:1;">×</span>
         </button>
       </div>
     </div>`;
